@@ -11,24 +11,22 @@
         font-family: sans-serif;
       }
 
-      #inputs-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      .grid {
+        display: grid;
+        grid-template-columns: auto auto
       }
 
-      #inputs {
-        display: flex;
-        flex-flow: column wrap;
-        align-content: flex-start;
+      .column {
+        display: grid;
+        grid-template-columns: auto
       }
 
-      #inputs > label, input, select {
-        box-sizing: border-box;
+      .grid > label {
+        text-align: right;
       }
 
-      div > label {
-        display: block
+      select, #jade {
+        width: 146px;
       }
 
       #button-container {
@@ -36,7 +34,7 @@
         justify-content : center;
       }
 
-      #output-grid {
+      #outputs {
         display: grid;
         grid-template-columns: auto auto auto
       }
@@ -51,97 +49,66 @@
     </style>
   </head>
   <body>
-    <div id="inputs-container">
-      <div id="inputs">
-        <label>Character:
-          <select id="char-select">
-            <option value="commando">Commando</option>
-            <option value="huntress">Huntress</option>
-            <option value="mul-t">MUL-T</option>
-            <option value="engineer">Engineer</option>
-            <option value="artificer">Artificer</option>
-            <option value="mercenary">Mercenary</option>
-            <option value="rex">Rex</option>
-            <option value="loader">Loader</option>
-            <option value="acrid">Acrid</option>
-          </select>
-        </label>
-        <label>Level:
-          <input type="number"/>
-        </label>
-        <label>
-          # <span>Commons</span>:
-          <input type="number"/>
-        </label>
-        <label>
-          # <span>Uncommons</span>:
-          <input type="number"/>
-        </label>
-        <label>
-          Jade Elephant?
-          <input type="checkbox"/>
-        </label>
-        <label>Flat Incoming Pre-Mitigation Damage:
-          <input type="number"/>
-        </label>
-        <label>% Health Incoming Pre-Mitigation Damage:
-          <input type="number"/>
-        </label>
-      </div>
+    <div id="inputs" class="grid">
+      <label>Character:</label>
+      <select id="char-select">
+        <option value="commando">Commando</option>
+        <option value="huntress">Huntress</option>
+        <option value="mul-t">MUL-T</option>
+        <option value="engineer">Engineer</option>
+        <option value="artificer">Artificer</option>
+        <option value="mercenary">Mercenary</option>
+        <option value="rex">Rex</option>
+        <option value="loader">Loader</option>
+        <option value="acrid">Acrid</option>
+      </select>
+      <label>Level:</label>
+      <input type="number"/>
+      <label># <span>Commons</span>:</label>
+      <input type="number"/>
+      <label># <span>Uncommons</span>:</label>
+      <input type="number"/>
+      <label>Jade Elephant?</label>
+      <input id="jade" type="checkbox"/>
+      <label>Flat Incoming Pre-Mitigation Damage:
+      </label>
+      <input type="number"/>
+      <label>% Health Incoming Pre-Mitigation Damage:</label>
+      <input type="number"/>
     </div>
+
     <div id="button-container">
       <button>Claculate</button>
     </div><hr/>
-    <div id="output-grid">
-      <div>
-        <label>
-          Incoming Pre-Mitigation Damage / Hit:
-          <output></output>
-        </label>
-        <label>
-          Armor:
-          <output></output>
-        </label>
-        <label>
-          Health:
-          <output></output>
-        </label>
-        <label>
-          Effective Health Multiplier:
-          <output></output>
-        </label>
-        <label>
-          Effective Health:
-          <output></output>
-        </label>
-        <label>
-          Effective Block Health Multiplier:
-          <output></output>
-        </label>
-        <label>
-          Effective Block Health:
-          <output></output>
-        </label>
+
+    <div id="outputs">
+      <div class="grid">
+        <label>Incoming Pre-Mitigation Damage / Hit:</label>
+        <output></output>
+        <label>Armor:</label>
+        <output></output>
+        <label>Health:</label>
+        <output></output>
+        <label>Effective Health Multiplier:</label>
+        <output></output>
+        <label>Effective Health:</label>
+        <output></output>
+        <label>Effective Block Health Multiplier:</label>
+        <output></output>
+        <label>Effective Block Health:</label>
+        <output></output>
       </div>
-      <div>
-        <label class="common">
-          # Repulsion Armor Plate:
-          <output></output>
-        </label>
-        <label class="common">
-          # Tougher Times:
-          <output></output>
-        </label>
-        <label class="uncommon">
-          # Infusion:
-          <output></output>
-        </label>
-        <label class="uncommon">
-          # Rose Buckler:
-          <output></output>
-        </label>
+      <div class="grid">
+        <label class="common"># Repulsion Armor Plate:</label>
+        <output class="common"></output>
+        <label class="common"># Tougher Times:</label>
+        <output class="common"></output>
+        <label class="uncommon"># Infusion:</label>
+        <output class="uncommon"></output>
+        <label class="uncommon"># Rose Buckler:</label>
+        <output class="uncommon"></output>
       </div>
-      <div>
+      <div class="column">
         <label>
           Next best <span class="common">common</span>:<br/>
           • <output></output> (+<output></output>%ebh)
@@ -153,4 +120,4 @@
       </div>
     </div>
   </body>
- </html>
+</html>
