@@ -8,16 +8,37 @@
       body {
         background-color: #282828;
         color: #dbdbb2;
-        font-family: sans-serif
+        font-family: sans-serif;
+      }
+
+      #inputs-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #inputs {
+        display: flex;
+        flex-flow: column wrap;
+        align-content: flex-start;
+      }
+
+      #inputs > label, input, select {
+        box-sizing: border-box;
+      }
+
+      div > label {
+        display: block
+      }
+
+      #button-container {
+        display: flex;
+        justify-content : center;
       }
 
       #output-grid {
         display: grid;
         grid-template-columns: auto auto auto
-      }
-
-      div > label {
-        display: block
       }
 
       .common {
@@ -30,29 +51,51 @@
     </style>
   </head>
   <body>
-    <div id="inputs">
-      <label>Character:
-        <select id="char-select">
-          <option value="commando">Commando</option>
-          <option value="huntress">Huntress</option>
-          <option value="mul-t">MUL-T</option>
-          <option value="engineer">Engineer</option>
-          <option value="artificer">Artificer</option>
-          <option value="mercenary">Mercenary</option>
-          <option value="rex">Rex</option>
-          <option value="loader">Loader</option>
-          <option value="acrid">Acrid</option>
-        </select>
-      </label>
-      <label>Level:
-        <input type="number"/>
-      </label>
+    <div id="inputs-container">
+      <div id="inputs">
+        <label>Character:
+          <select id="char-select">
+            <option value="commando">Commando</option>
+            <option value="huntress">Huntress</option>
+            <option value="mul-t">MUL-T</option>
+            <option value="engineer">Engineer</option>
+            <option value="artificer">Artificer</option>
+            <option value="mercenary">Mercenary</option>
+            <option value="rex">Rex</option>
+            <option value="loader">Loader</option>
+            <option value="acrid">Acrid</option>
+          </select>
+        </label>
+        <label>Level:
+          <input type="number"/>
+        </label>
+        <label>
+          # <span>Commons</span>:
+          <input type="number"/>
+        </label>
+        <label>
+          # <span>Uncommons</span>:
+          <input type="number"/>
+        </label>
+        <label>
+          Jade Elephant?
+          <input type="checkbox"/>
+        </label>
+        <label>Flat Incoming Pre-Mitigation Damage:
+          <input type="number"/>
+        </label>
+        <label>% Health Incoming Pre-Mitigation Damage:
+          <input type="number"/>
+        </label>
+      </div>
     </div>
-    <button>Claculate</button><hr/>
+    <div id="button-container">
+      <button>Claculate</button>
+    </div><hr/>
     <div id="output-grid">
       <div>
         <label>
-          Incoming Pre-Mitigation Damage:
+          Incoming Pre-Mitigation Damage / Hit:
           <output></output>
         </label>
         <label>
@@ -100,15 +143,14 @@
       </div>
       <div>
         <label>
-          Next best <span class="common">common</span>:
-          <output></output>
+          Next best <span class="common">common</span>:<br/>
+          • <output></output> (+<output></output>%ebh)
         </label>
         <label>
-          Next best <span class="uncommon">uncommon</span>:
-          <output></output>
+          Next best <span class="uncommon">uncommon</span>:<br/>
+          • <output></output> (+<output></output>%ebh)
         </label>
       </div>
     </div>
   </body>
-  
  </html>
