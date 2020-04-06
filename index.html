@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang=en>
+  <head>
+    <meta charset=utf-8>
+    <title>ror2-eh-calc</title>
+    <link href="data:image/gif;base64,R0lGODlhEAAQAPECACgoKEWFiAAAAAAAACH5BAUKAAIALAAAAAAQABAAAAIxFI6ZYhqhAIsvzvTqaijDjXnfcR3iKHGnlnYrwjTrF8tvWp5w7bJ1HCH9gIrhUPgrAAA7" rel=icon>
+    <style>
+      body {
+        background-color: #282828;
+        color: #dbdbb2;
+        font-family: sans-serif
+      }
+
+      #output-grid {
+        display: grid;
+        grid-template-columns: auto auto auto
+      }
+
+      div > label {
+        display: block
+      }
+
+      .common {
+        color: #fbf1c7
+      }
+
+      .uncommon {
+        color: #98971a
+      }
+    </style>
+  </head>
+  <body>
+    <div id="inputs">
+      <label>Character:
+        <select id="char-select">
+          <option value="commando">Commando</option>
+          <option value="huntress">Huntress</option>
+          <option value="mul-t">MUL-T</option>
+          <option value="engineer">Engineer</option>
+          <option value="artificer">Artificer</option>
+          <option value="mercenary">Mercenary</option>
+          <option value="rex">Rex</option>
+          <option value="loader">Loader</option>
+          <option value="acrid">Acrid</option>
+        </select>
+      </label>
+      <label>Level:
+        <input type="number"/>
+      </label>
+    </div>
+    <button>Claculate</button><hr/>
+    <div id="output-grid">
+      <div>
+        <label>
+          Incoming Pre-Mitigation Damage:
+          <output></output>
+        </label>
+        <label>
+          Armor:
+          <output></output>
+        </label>
+        <label>
+          Health:
+          <output></output>
+        </label>
+        <label>
+          Effective Health Multiplier:
+          <output></output>
+        </label>
+        <label>
+          Effective Health:
+          <output></output>
+        </label>
+        <label>
+          Effective Block Health Multiplier:
+          <output></output>
+        </label>
+        <label>
+          Effective Block Health:
+          <output></output>
+        </label>
+      </div>
+      <div>
+        <label class="common">
+          # Repulsion Armor Plate:
+          <output></output>
+        </label>
+        <label class="common">
+          # Tougher Times:
+          <output></output>
+        </label>
+        <label class="uncommon">
+          # Infusion:
+          <output></output>
+        </label>
+        <label class="uncommon">
+          # Rose Buckler:
+          <output></output>
+        </label>
+      </div>
+      <div>
+        <label>
+          Next best <span class="common">common</span>:
+          <output></output>
+        </label>
+        <label>
+          Next best <span class="uncommon">uncommon</span>:
+          <output></output>
+        </label>
+      </div>
+    </div>
+  </body>
+  
+ </html>

@@ -1,2 +1,2 @@
-# ror2-ehp-calc
-Risk of Rain 2 Effective Health Points Calculator
+# ror2-eh-calc
+Risk of Rain 2 Effective Health Calculator
