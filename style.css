@@ -1,0 +1,52 @@
+body {
+  background-color: #282828;
+  color: #dbdbb2;
+  font-family: sans-serif
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: auto auto
+}
+
+.column {
+  display: grid;
+  grid-template-columns: auto
+}
+
+.grid > label {
+  text-align: right
+}
+
+select {
+  width: 146px
+}
+
+input {
+  width: 142px
+}
+
+#button-container {
+  display: flex;
+  justify-content : center
+}
+
+#outputs {
+  display: grid;
+  grid-template-columns: auto auto auto 
+}
+
+.common {
+  color: #fbf1c7
+}
+
+.uncommon {
+  color: #98971a
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center
+}
