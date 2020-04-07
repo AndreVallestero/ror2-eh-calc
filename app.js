@@ -69,6 +69,7 @@ function calculate() {
     let commons = id_ele('commons').value;
     let uncommons = id_ele('uncommons').value;
     let damage = id_ele('damage').value;
+    let spinel = id_ele('spinel').checked;
     let jade = id_ele('jade').checked;
     let drizzle = id_ele('drizzle').checked;
     
@@ -78,8 +79,7 @@ function calculate() {
     let toughs = 0;
     let infuses = 0;
     let roses = 0;
-    base_armor += jade * 500;
-    base_armor += drizzle * 70;
+    base_armor += spinel * 20 + jade * 500 + drizzle * 70;
 
     while (commons + uncommons) {
         let max = -1;
