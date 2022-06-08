@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
+  
     <div id="inputs" class="grid">
       <label>Character:</label>
       <select id="char-select">
@@ -19,6 +20,11 @@
         <option value="rex">Rex</option>
         <option value="loader">Loader</option>
         <option value="acrid">Acrid</option>
+        <option value="bandit">Bandit</option>
+        <option value="captain">Captain</option>
+        <option value="heretic">Heretic</option>
+        <option value="Rcrid">Railgunner</option>
+        <option value="void-fiend">Void Fiend</option>
       </select>
       <label for="level">Level:</label>
       <input id="level" type="number" min="1" max="999" value="20"/>
@@ -34,6 +40,8 @@
       <input id="jade" type="checkbox"/>
       <label for="drizzle">Drizzle Mode?</label>
       <input id="drizzle" type="checkbox"/>
+      <label for="sprint">Sprinting?</label>
+      <input id="sprint" type="checkbox"/>
     </div>
 
     <div id="button-container">
@@ -52,6 +60,8 @@
         <output id="out-eh"></output>
         <label>Block Chance %:</label>
         <output id="out-block"></output>
+        <label>Flat Block:</label>
+        <output id="out-flat-block"></output>
         <label>Effective Block Health Multiplier:</label>
         <output id="out-ebhm"></output>
         <label>Effective Block Health:</label>
@@ -62,6 +72,8 @@
         <output id="repul" class="common"></output>
         <label class="common"># Tougher Times:</label>
         <output id="tough" class="common"></output>
+        <label class="common"># Bison Steak:</label>
+        <output id="bison" class="common"></output>
         <label class="uncommon"># Infusion:</label>
         <output id="infus" class="uncommon"></output>
         <label class="uncommon"># Rose Buckler:</label>
@@ -78,7 +90,13 @@
         </label>
       </div>
     </div>
-    <footer>This page is 2KB</footer>
+    <footer>
+	NOTES<br>
+	Block multiplier accounts for the effect of Repulsion Armor Plate and Tougher Times<br>
+	These calculations do not include Void DLC content<br>
+	Works best with Hunter, power-saw MUL-T, and Mercenary as they can sprint while attacking, thus benefitting from Rose Bucklers<br>
+	This page is 3KB
+	</footer>
     <script type="text/javascript" src="app.js"></script>
   </body>
 </html>
